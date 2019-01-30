@@ -7,6 +7,10 @@
 #include "FATFileSystem.h"
 #include "mbed.h"
 
+#define TS_UPDATE_FILE_NAME "toolsense.bin"
+#define TS_FLASH_BD_START 0x8E000
+#define TS_FLASH_BD_SIZE 0x6E000
+
 #define FS_MOUNT_PATH "fs"
 #define FS_UPDATE_FILE_PATH "/" FS_MOUNT_PATH "/" TS_UPDATE_FILE_NAME
 
