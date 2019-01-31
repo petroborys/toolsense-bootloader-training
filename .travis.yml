@@ -2,9 +2,6 @@
 language: python
 python:
 - '3.6'
-env:
-  global:
-  - TC_HOME=$HOME/tc
 matrix:
   include:
   - os: linux
@@ -12,17 +9,13 @@ matrix:
 before_install:
 - pip install -U pip wheel
 - pip install mbed-cli
-- mbed cache on
-- mbed update
+- mbed deploy
 - mbed new .
 - chmod +x mbed-ci/toolchain_install.sh
 - . mbed-ci/toolchain_install.sh && linux_default_download
 script:
+- mbed cache on
+- mbed update
 - mbed config GCC_ARM_PATH $HOME/bin
 - mkdir -p BUILD
-- mbed compile -t GCC_ARM -m UBLOX_C030_N211 --source=./bootloader -c
-- mbed compile -t GCC_ARM -m UBLOX_C030_N211
-cache:
-  directories:
-  - "${TC_HOME}"
-  - "${HOME}/.mbed/mbed-cache"
+
