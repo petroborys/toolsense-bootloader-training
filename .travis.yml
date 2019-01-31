@@ -2,6 +2,9 @@
 language: python
 python:
 - '3.6'
+env:
+  global:
+  - TC_HOME=$HOME/tc
 matrix:
   include:
   - os: linux
@@ -20,3 +23,7 @@ script:
 - mkdir -p BUILD
 - mbed compile -t GCC_ARM -m UBLOX_C030_N211 --source=./bootloader -c
 - mbed compile -t GCC_ARM -m UBLOX_C030_N211
+cache:
+  directories:
+  - "${TC_HOME}"
+  - "${HOME}/.mbed/mbed-cache"
