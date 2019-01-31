@@ -9,7 +9,7 @@ matrix:
 before_install:
 - pip install -U pip wheel
 - pip install mbed-cli
-- mbed update
+- mbed deploy
 - mbed new .
 - chmod +x mbed-ci/toolchain_install.sh
 - . mbed-ci/toolchain_install.sh && linux_default_download
