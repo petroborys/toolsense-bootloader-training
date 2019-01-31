@@ -6,6 +6,8 @@
             "platform.stdio-flush-at-exit": false
         },
         "UBLOX_C030_N211": {
+	    "target.components_add": ["SD"],
+	    "target.components_add": ["FLASHIAP"],
             "target.macros_add": ["SDMOSI=PE_6", "SDMISO=PE_5", "SDSCK=PE_2", "SDCS=PE_11"]
         }
     }
