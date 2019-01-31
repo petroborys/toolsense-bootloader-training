@@ -18,4 +18,6 @@ script:
 - mbed update
 - mbed config GCC_ARM_PATH $HOME/bin
 - mkdir -p BUILD
+- mbed compile -t GCC_ARM -m UBLOX_C030_N211 --source=./bootloader -c
+- mbed compile -t GCC_ARM -m UBLOX_C030_N211
 
