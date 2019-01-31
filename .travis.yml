@@ -14,6 +14,7 @@ before_install:
 - chmod +x mbed-ci/toolchain_install.sh
 - . mbed-ci/toolchain_install.sh && linux_default_download
 script:
+- mbed cache on
 - mbed update
 - mbed config GCC_ARM_PATH $HOME/bin
 - mkdir -p BUILD
